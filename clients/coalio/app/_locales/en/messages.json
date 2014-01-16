@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "coalio",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Coalio anti-bullying robot.",
+    "description": "The description of the application"
+  }
+}
