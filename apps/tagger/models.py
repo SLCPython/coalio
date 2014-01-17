@@ -8,7 +8,7 @@ class TaggedPost(TimestampMixin):
     ref_url = models.URLField(max_length=300)
     content = models.TextField(blank=True)
 
-    tagged_by = models.ForeignKey('profiles.Coalio.User')
+    tagged_by = models.ForeignKey('profiles.CoalioUser')
 
     def __unicode__(self):
         return "TaggedPost #%s from %s" % (self.id, self.ref_url)
