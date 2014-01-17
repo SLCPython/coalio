@@ -1,0 +1,16 @@
+{% extends "discussions/_base.html" %}
+
+{% block title %}Discussions{% endblock %}
+
+{% block body %}
+<h1>Discussion</h1>
+<h3 class='discussion-title'>{{ discussion.tagged_post.content }}</h3>
+<p class='label label-info'><a href='{{ discussion.tagged_post.ref_url }}'>See post →</a></p>
+<p class='text text-info'>{{ discussion.tagged_post.bully_social_id }}</p>
+
+<div style="text-align:left;">
+  {% for reply in discussion.replies %}
+  <span>{{ reply.user.first_name }}: {{ reply.message }}</span><br/>
+  {% endfor %}
+</div>
+{% endblock %}

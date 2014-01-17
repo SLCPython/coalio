@@ -1,0 +1,14 @@
+{% extends "discussions/_base.html" %}
+
+{% block title %}Discussions{% endblock %}
+
+{% block body %}
+<h1>Discussions</h1>
+{% for discussion in discussions %}
+  <h3 class='discussion-title'><a href='{{ discussion.get_absolute_url }}'>{{ discussion.tagged_post.content|truncatewords:5 }}</a></h3>
+
+  <div style="text-align:left;">
+    {{ discussions.tagged_post.content }}
+  </div>
+{% endfor %}
+{% endblock %}
