@@ -3,7 +3,7 @@
 from django.shortcuts import render
 
 def index(request):
-    template_name = 'discussions/page.html'
+    template_name = 'discussions/temp.html'
     ctx = {}
     ctx['person'] = {
             'first_name': "Bob",
