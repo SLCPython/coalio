@@ -18,15 +18,15 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "coalio",
+    "default_title": "No Bullying",
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://twitter.com/*",
+        "https://twitter.com/*"
       ],
       "css": [
         "styles/main.css"
@@ -38,5 +38,13 @@
       "run_at": "document_end",
       "all_frames": false
     }
-  ]
+  ],
+  "web_accessible_resources": [
+	"images/no_icon.gif"
+	],
+	"permissions": [
+	"storage",
+	"contextMenus",
+	"tabs"
+	]
 }
