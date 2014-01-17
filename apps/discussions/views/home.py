@@ -3,9 +3,10 @@
 from django.shortcuts import render
 
 def index(request):
+    template_name = 'discussions/page.html'
     ctx = {}
     ctx['person'] = {
             'first_name': "Bob",
             'last_name': "Builder"
     }
-    return render(request, 'discussions/temp.html', ctx)
+    return render(request, template_name, ctx)

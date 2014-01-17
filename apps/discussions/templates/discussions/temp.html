@@ -1,9 +1,7 @@
-<!doctype:html>
-<head>
-  <title>Coalio {% block title %}{% endblock %}</title>
-</head>
-<body>
-  {% block content %}
-  Test: {{ person.first_name }}
-  {% endblock %}
-</body>
+{% extends "discussions/_base.html" %}
+
+{% block title %}Discussions{% endblock %}
+
+{% block content %}
+<h1>Test Content</h1>
+{% endblock %}
