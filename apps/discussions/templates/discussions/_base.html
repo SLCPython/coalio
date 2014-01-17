@@ -1,9 +1,61 @@
-<!doctype:html>
-<head>
-  <title>Coalio {% block title %}{% endblock %}</title>
-</head>
-<body>
-  {% block content %}
-    Default text (no overriden content)
-  {% endblock %}
-</body>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coalio {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap  3.0 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}" />
+    <!-- custom sass-css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->    
+
+  </head>
+  <body>
+    <div id='wrap'>
+    {% block navbar %}
+        {# {% include 'coalio/navbar_includes/usernavbar.html' %} #}
+    {% endblock %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ message }}
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="container">
+    {% block body %}
+    {% endblock %}
+    </div><!-- /container -->
+
+    </div>
+    <footer class="navbar-collapse collapse">
+        <div class='container'>
+        {% block footer %}
+            {# {% include 'coalio/includes/footer.html' %} #}
+        {% endblock %}
+        </div>
+    </footer>
+
+    {% block extra_js %}
+    {% endblock %}
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
