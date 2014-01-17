@@ -30,6 +30,10 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 
 1. `cd` to your repo and install dependencies: `pip install -r requirements/base.txt`
 
+### Create a Dev DB
+
+1. This part’s easy: `./manage.py syncdb --migrate` enter a local admin username (email) and password if prompted.
+
 ### Let ‘er rip!
 
 1. In the repo, run `./manage.py runserver`
@@ -40,4 +44,6 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 1. Email your ssh public key to faris ☺
 2. Add the remote repo: `git remote add production git@198.58.106.50:coalio.git`
 3. Now you can push `master` branches to the production server by using: `git push production master`! (Be sure to push to origin so we're all on the same page: `git push origin master`).
+4. If you have a migration, you will need to inform a sysadmin to run a migration on the server
+
 
