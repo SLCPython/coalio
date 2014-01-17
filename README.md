@@ -16,7 +16,10 @@ Application for HackDance 2014
   * `pip install virtualenvwrapper`
   * `source /usr/local/bin/virtualenvwrapper.sh`
   * You will want to add this line to your `.bashrc` or `.bash_profile`
-3. Add the apps directory to the virtualenv: `add2virtualenv \`pwd\`/apps` 
+3. Add the apps directory to the virtualenv: 
+```bash
+    add2virtualenv `pwd`apps 
+```
 4. Configure the virtualenv (you will need to know your virtualenv directory):
 eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 5. Update the `DJANGO_SETTINGS_MODULE` setting to include this line:
@@ -31,3 +34,10 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 
 1. In the repo, run `./manage.py runserver`
 2. Open `localhost:8000` in a browser.
+
+## Pushing to production
+
+1. Email your ssh public key to faris ☺
+2. Add the remote repo: `git remote add production git@198.58.106.50:coalio.git`
+3. Now you can push `master` branches to the production server by using: `git push production master`! (Be sure to push to origin so we're all on the same page: `git push origin master`).
+
