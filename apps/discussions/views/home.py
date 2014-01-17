@@ -3,7 +3,7 @@
 from django.shortcuts import render
 # from discussions.models import PageModel
 
-def view_discussion(request):
+def view_discussion(request, id):
     template_name = 'discussions/temp.html'
     ctx = {}
     ctx['person'] = {
