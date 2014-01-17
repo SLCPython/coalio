@@ -52,5 +52,6 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 * You can make an easy virtualenv environment starter script in your `.bash_aliases` (or `.bash_profile`) file by adding these lines:
 ```
 alias coalio='cd ~/workspace/projects/coalio && workon coalio'
+
 alias startcoalio='coalio && ./manage.py runserver'
 ```
