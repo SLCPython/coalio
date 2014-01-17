@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+.main-view {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.main-view h3{
+	text-align: left;
+}
+
+.main-view .chat{
+	border: 5px;
+}
