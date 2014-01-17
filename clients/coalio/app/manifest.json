@@ -26,12 +26,9 @@
   "content_scripts": [
     {
       "matches": [
-        "http://twitter.com/*",
-        "https://twitter.com/*",
-		"http://www.facebook.com/*",
-		"https://www.facebook.com/*",
-		"http://www.youtube.com/*",
-		"https://www.youtube.com/*"
+        "*://*.twitter.com/*",
+		"*://*.facebook.com/*",
+		"*://*.youtube.com/*"
       ],
       "css": [
         "styles/main.css"
@@ -48,12 +45,10 @@
 	"permissions": [
 	"storage",
 	"contextMenus",
+	"activeTab",
 	"tabs",
-		"http://twitter.com/*",
-        "https://twitter.com/*",
-		"http://www.facebook.com/*",
-		"https://www.facebook.com/*",
-		"http://www.youtube.com/*",
-		"https://www.youtube.com/*"
+        "*://*.twitter.com/*",
+		"*://*.facebook.com/*",
+		"*://*.youtube.com/*"
 	]
 }
