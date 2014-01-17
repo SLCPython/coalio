@@ -2,10 +2,10 @@
 
 from django.db import models
 
+from profiles.managers import CoalioUserManager
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin
 )
-
 
 class CoalioUser(AbstractBaseUser, PermissionsMixin):
     """
@@ -47,6 +47,8 @@ class CoalioUser(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+
+    objects = CoalioUserManager()
 
     def get_full_name(self):
         # The user is identified by their email and first name
