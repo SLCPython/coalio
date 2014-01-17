@@ -9,7 +9,7 @@ Application for HackDance 2014
 1. `git clone git@github.com:octaflop/coalio.git`
 2. `cd coalio`
 
-### Install Virtualenvwrapper and set up
+### Install [Virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/) and set up
 
 1. Install pip
 2. Install `virtualenvwrapper`
