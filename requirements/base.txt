@@ -1,0 +1,12 @@
+Django==1.6
+South==0.8.2
+django-tastypie==0.10.0
+python-dateutil==2.1
+python-mimeparse==0.1.4
+six==1.4.1
+Pillow==2.2.2
+django-extensions==1.2.5
+django-haystack==2.1.0
+Whoosh==2.5.6
+django-taggit==0.11.2
+

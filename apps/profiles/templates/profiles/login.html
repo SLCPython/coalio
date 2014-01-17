@@ -1,0 +1,20 @@
+{% extends "discussions/_base.html" %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<!-- login css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+{% block body %}
+<form class="form-signin" action="{% url 'home' %}" method="POST">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  {% csrf_token %}
+  <input type='hidden' name='next_url' value='{{ next_url }}' />
+  {{ login_form.email.errors }}
+  {{ login_form.email }}
+  {{ login_form.password.errors }}
+  {{ login_form.password }}
+  <button class="btn btn-lg btn-primary btn-block" type="submit"><span class='glyphicon glyphicon-log-in'></span> Sign in</button>
+</form>
+{% endblock %}
