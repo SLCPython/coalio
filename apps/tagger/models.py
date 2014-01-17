@@ -7,6 +7,7 @@ from coalio.models.mixins import TimestampMixin
 class TaggedPost(TimestampMixin):
     ref_url = models.URLField(max_length=300)
     content = models.TextField(blank=True)
+    bully_social_id = models.CharField(max_length=200, blank=True, default='')
 
     tagged_by = models.ForeignKey('profiles.CoalioUser')
 
