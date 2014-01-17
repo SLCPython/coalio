@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 from profiles.forms import LoginForm
-from profiles.models import UttrUser
+from profiles.models import CoalioUser
 
 def login_view(request):
     ctx = {}

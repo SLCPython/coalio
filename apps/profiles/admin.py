@@ -17,7 +17,7 @@ class CoalioUserCreationForm(forms.ModelForm):
                                 widget=forms.PasswordInput)
 
     class Meta:
-        model = UttrUser
+        model = CoalioUser
         fields = ("email", "first_name", "last_name", "role")
 
     def clean_password2(self):
@@ -31,7 +31,7 @@ class CoalioUserCreationForm(forms.ModelForm):
 
     def save(self, commit=True):
         # Save the password in hashed format
-        user = super(UttrUserCreationForm, 
+        user = super(CoalioUserCreationForm, 
                         self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
         if commit:
@@ -46,7 +46,7 @@ class CoalioUserChangeForm(forms.ModelForm):
     """
     password = ReadOnlyPasswordHashField()
     class Meta:
-        model = UttrUser
+        model = CoalioUser
     def clean_password(self):
         # Regardless of what the user provides, return the
         # initial value. This is done here, rather than on
@@ -57,8 +57,8 @@ class CoalioUserChangeForm(forms.ModelForm):
 
 class CoalioUserAdmin(UserAdmin):
     # Set the add/modify forms
-    add_form = UttrUserCreationForm
-    form = UttrUserChangeForm
+    add_form = CoalioUserCreationForm
+    form = CoalioUserChangeForm
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
@@ -91,5 +91,5 @@ class CoalioUserAdmin(UserAdmin):
         ),
     )
 
-# Register the new UttrUserAdmin
+# Register the new CoalioUserAdmin
 admin.site.register(CoalioUser, CoalioUserAdmin)

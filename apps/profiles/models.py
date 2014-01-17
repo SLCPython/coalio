@@ -2,7 +2,6 @@
 
 from django.db import models
 
-from profiles.managers import UttrUserManager
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin
 )

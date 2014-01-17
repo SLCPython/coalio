@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     url(r'^discussion/', include('discussions.urls', namespace='discussions')),
 
     # 3rd party urls
-    url(r'^ckeditor/', include('uttr.ckeditor_urls')),
     url(r'^search/', include('haystack.urls', namespace='search')),
 
     # admin urls
