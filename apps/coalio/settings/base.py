@@ -48,6 +48,8 @@ LOCAL_APPS = (
 )
 
 THIRD_PARTY_APPS = (
+    'taggit',
+
     'south',
     'haystack',
 )

@@ -1,5 +1,4 @@
 -r base.txt
 
 ipython==1.1.0
-django-extensions==1.2.5
 
