@@ -32,6 +32,7 @@
         "styles/main.css"
       ],
       "js": [
+	    "scripts/jquery.min.js",
         "scripts/contentscript.js"
       ],
       "run_at": "document_end",
