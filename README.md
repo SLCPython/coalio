@@ -47,3 +47,10 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 4. If you have a migration, you will need to inform a sysadmin to run a migration on the server
 
 
+## Pro-tips
+
+* You can make an easy virtualenv environment starter script in your `.bash_aliases` (or `.bash_profile`) file by adding these lines:
+```
+alias coalio='cd ~/workspace/projects/coalio && workon coalio'
+alias startcoalio='coalio && ./manage.py runserver'
+```
