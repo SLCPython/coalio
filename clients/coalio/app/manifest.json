@@ -1,6 +1,6 @@
 {
-    "name": "__MSG_appName__",
-    "version": "0.0.1",
+    "name": "No Cyber Bullying",
+    "version": "0.1.0",
     "manifest_version": 2,
     "description": "__MSG_appDescription__",
     "icons": {
@@ -11,7 +11,8 @@
     "background": {
         "scripts": [
             "scripts/background.js"
-        ]
+        ],
+		"persistent":false
     },
   "page_action": {
     "default_icon": {
@@ -26,7 +27,11 @@
     {
       "matches": [
         "http://twitter.com/*",
-        "https://twitter.com/*"
+        "https://twitter.com/*",
+		"http://www.facebook.com/*",
+		"https://www.facebook.com/*",
+		"http://www.youtube.com/*",
+		"https://www.youtube.com/*"
       ],
       "css": [
         "styles/main.css"
@@ -34,9 +39,7 @@
       "js": [
 	    "scripts/jquery.min.js",
         "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -45,6 +48,12 @@
 	"permissions": [
 	"storage",
 	"contextMenus",
-	"tabs"
+	"tabs",
+		"http://twitter.com/*",
+        "https://twitter.com/*",
+		"http://www.facebook.com/*",
+		"https://www.facebook.com/*",
+		"http://www.youtube.com/*",
+		"https://www.youtube.com/*"
 	]
 }
