@@ -16,9 +16,18 @@ $(function () {
 		var tweetText = $($(this).find("p.tweet-text")[0]).html();
 		var tweetAuthor = $(this).attr('data-screen-name');
 		var post =  new Posting(tweetAuthor, tweetID, tweetText, 'twitter.com');
-		#console.log(post);
+		//console.log(post);
 
-    //$(".tweet").css("border", "13px solid red");
+    	 $.ajax({
+            url: 'https://coalio.metacogni.tv/api/tagged_post/?format=json&username=schart%40gmail.com&api_key=b6c56543a805dca901829d834554e987ab15bdce',
+            type: 'post',
+            dataType: 'json',
+            contentType:"application/json; charset=utf-8",
+            success: function (data) {
+                console.log(data);
+            },
+            data: JSON.stringify(post)
+        });
     	
    		$(this).find(".time").after(imgLink);
    		    $(this).find('.CoalioNo_Icon').balloon({
@@ -29,10 +38,10 @@ $(function () {
 
 function Posting(username,id,text,domain)
 {
-this.username=username;
-this.id=id;
-this.text=text;
-this.domain=domain;
+this.bully_social_id=username;
+this.resource_url=id;
+this.content=text;
+this.ref_url=domain;
 }
 
 function myAlerter() {

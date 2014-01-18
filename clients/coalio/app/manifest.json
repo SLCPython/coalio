@@ -48,8 +48,9 @@
 	"contextMenus",
 	"activeTab",
 	"tabs",
-        "*://*.twitter.com/*",
+    "*://*.twitter.com/*",
 		"*://*.facebook.com/*",
-		"*://*.youtube.com/*"
+		"*://*.youtube.com/*",
+    "*://coalio.metacogni.tv/*"
 	]
 }
