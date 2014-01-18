@@ -1,0 +1,12 @@
+{% extends "discussions/_base.html" %}
+
+{% block title %}{{ pages.title }}{% endblock %}
+
+{% block body %}
+{% for page in pages %}
+<h1><a href='{{ page.get_absolute_url }}'>{{ page.title }}</a></h1>
+<article>
+  {{ page.content|truncatewords_html }}
+</article>
+{% end %}
+{% endblock %}
