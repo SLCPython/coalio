@@ -2,7 +2,7 @@ from .base import *
 
 from os import environ
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
