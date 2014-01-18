@@ -10,7 +10,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'coaliodb',
         'USER': 'coalio',
-        #'PASSWORD': DB_PASS,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
