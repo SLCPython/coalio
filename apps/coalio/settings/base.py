@@ -45,6 +45,7 @@ LOCAL_APPS = (
     'profiles',
     'discussions',
     'tagger',
+    'pages',
 )
 
 THIRD_PARTY_APPS = (

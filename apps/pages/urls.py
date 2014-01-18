@@ -2,7 +2,7 @@
 
 from django.conf.urls import patterns, include, url
 
-urlpatterns = patterns('pages.views.pages',
-	url(r'^(?P<slug>[\w-]+)$', 'page', name='view'),
-	url(r'^$', 'pages', name='home'),
+urlpatterns = patterns('pages.views.pages_view',
+	url(r'^(?P<slug>[\w-]+)$', 'view_page', name='view'),
+	url(r'^$', 'view_pages', name='home'),
 )
