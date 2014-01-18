@@ -12,7 +12,7 @@ class TaggedPost(TimestampMixin):
     content = models.TextField(blank=True)
     bully_social_id = models.CharField(max_length=200, blank=True, default='')
 
-    tagged_by = models.ForeignKey('profiles.CoalioUser')
+    tagged_by = models.ForeignKey('profiles.CoalioUser', blank=True, null=True)
     tags = TaggableManager()
 
     def __unicode__(self):
