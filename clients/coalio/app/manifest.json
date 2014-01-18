@@ -35,7 +35,8 @@
       ],
       "js": [
 	    "scripts/jquery.min.js",
-        "scripts/contentscript.js"
+      "scripts/jquery.balloon.min.js",
+      "scripts/contentscript.js"
       ]
     }
   ],
