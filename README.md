@@ -34,6 +34,12 @@ eg: `vim ~/.virtualenvs/coalio/bin/postactivate`
 
 1. This part’s easy: `./manage.py syncdb --migrate` enter a local admin username (email) and password if prompted.
 
+### Load Static-page fixtures
+
+To load static pages (such as about; etc) you will need to load the static page fixtures:
+
+* `./manage.py loaddata apps/pages/fixtures/pages.json`
+
 ### Let ‘er rip!
 
 1. In the repo, run `./manage.py runserver`
