@@ -15,5 +15,6 @@ class TaggedPost(TimestampMixin):
     tagged_by = models.ForeignKey('profiles.CoalioUser', blank=True, null=True)
     tags = TaggableManager()
 
+
     def __unicode__(self):
         return "TaggedPost #%s from %s" % (self.id, self.ref_url)
