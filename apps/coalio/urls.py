@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^$', 'profiles.views.home.login_view', name='home'),
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
     url(r'^accounts/login/$', 'profiles.views.home.login_view', name='login'),
+    url(r'^taggedposts/', include('tagger.urls', namespace='tagger')),
     url(r'^discussion/', include('discussions.urls', namespace='discussions')),
     url(r'^pages/', include('pages.urls', namespace='pages')),
 
