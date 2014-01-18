@@ -8,7 +8,6 @@ from django.contrib.auth.models import (
 )
 
 
-
 class CoalioUser(AbstractBaseUser, PermissionsMixin):
     """
     Default user for uttr profiles.
@@ -35,12 +34,6 @@ class CoalioUser(AbstractBaseUser, PermissionsMixin):
         max_length=255,
         blank=True
         )
-
-    # api_key = models.CharField(
-        # max_length=50,
-        # blank=True,
-        # default=''
-        # )
 
     role = models.CharField(
         max_length=7,
