@@ -9,8 +9,21 @@
 <p class='text text-info'>{{ discussion.tagged_post.bully_social_id }}</p>
 
 <div style="text-align:left;">
-  {% for reply in discussion.replies %}
-  <span>{{ reply.user.first_name }}: {{ reply.message }}</span><br/>
+  {% for reply in replies %}
+    <span>{{ reply.author }}: {{ reply.content }}</span><br/>
   {% endfor %}
+</div>
+
+<div class='reply-form'>
+  <form role='form' action='#' method='POST'>
+    {% csrf_token %}
+    {% for field in reply_form %}
+    <div class="form-group">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <button class='btn btn-success'>Reply</button>
+  </form>
 </div>
 {% endblock %}

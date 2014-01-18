@@ -2,12 +2,29 @@
 
 from django.shortcuts import render
 
-from discussions.models import Discussion
+from discussions.models import Discussion, Reply
+from discussions.forms import ReplyForm
 
 def view_discussion(request, id):
     template_name = 'discussions/discussion_view.html'
     ctx = {}
+    discussion = Discussion.objects.get(id=id)
     ctx['discussion'] = Discussion.objects.get(id=id)
+
+    reply_form = ReplyForm()
+    ctx['reply_form'] = reply_form
+
+    ctx['replies'] = Reply.objects.filter(discussion=discussion)
+
+    if request.method == 'POST':
+        reply_form = ReplyForm(request.POST)
+        ctx['reply_form'] = reply_form
+        if reply_form.is_valid:
+            reply = reply_form.save(commit=False)
+            reply.author = request.user
+            reply.discussion = discussion
+            reply.save()
+
     return render(request, template_name, ctx)
 
 
