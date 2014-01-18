@@ -8,17 +8,36 @@ function reportTweet(post){
 	console.log(post);
 	
 	    	$.ajax({
-            url: 'https://coalio.metacogni.tv/api/tagged_post/?format=json&username=schart%40gmail.com&api_key=b6c56543a805dca901829d834554e987ab15bdce',
+            url: 'http://coalio.metacogni.tv/api/tagged_post/?format=json&username=schart%40gmail.com&api_key=b6c56543a805dca901829d834554e987ab15bdce',
             type: 'POST',
             dataType: 'json',
             contentType:"application/json",
-            success: function (data) {
-                console.log(data);
+            success: function (XMLHttpRequest, textStatus) {
+    			var headers = XMLHttpRequest.getAllResponseHeaders();
+    			//console.log(headers);
             },
-            error:function(  jqXHR,  textStatus,  errorThrown ){
-            	console.log(jqXHR);
-            	console.log(textStatus);
-            	console.log(errorThrown)
+            complete: function(  jqXHR,  textStatus,  errorThrown ){
+            	var headers = jqXHR.getAllResponseHeaders();
+            	headers = headers.split("\n");
+            	var gourl = null;
+            	headers.forEach(function(h) {
+            		//console.log(h);
+            		//console.log(h.search("Location:"));
+    				if(h.search("Location:") > -1 && gourl == null)
+    				{
+
+    					gourl = h.replace("Location: ", "");
+    				}
+				});
+				gourl = gourl.replace("api/tagged_post", "taggedposts");
+				console.log(gourl);
+				if(gourl != null)
+				{
+
+					  var win=window.open(gourl, '_blank');
+  						win.focus();
+				}
+					///chrome.tabs.create({ url: gourl });
             },
             data: JSON.stringify(post)
         });
