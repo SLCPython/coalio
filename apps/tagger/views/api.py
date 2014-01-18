@@ -12,3 +12,6 @@ class TaggedPostResource(ModelResource):
         resource_name = 'tagged_post'
         authentication = ApiKeyAuthentication()
         authorization = DjangoAuthorization()
+
+    def obj_create(self, bundle, **kwargs):
+        return super(TaggedPostResource, self).obj_create(bundle, tagged_by=bundle.request.user)
