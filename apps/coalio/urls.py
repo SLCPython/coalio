@@ -1,9 +1,13 @@
 #encoding: utf-8
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
+
+from tagger.views.api import TaggedPostResource
+
 admin.autodiscover()
+
+tagged_post = TaggedPostResource()
 
 urlpatterns = patterns('',
     # Examples:
@@ -11,6 +15,9 @@ urlpatterns = patterns('',
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
     url(r'^accounts/login/$', 'profiles.views.home.login_view', name='login'),
     url(r'^discussion/', include('discussions.urls', namespace='discussions')),
+
+    # API urls
+    url(r'^api/', include(tagged_post.urls)),
 
     # 3rd party urls
     url(r'^search/', include('haystack.urls', namespace='search')),
