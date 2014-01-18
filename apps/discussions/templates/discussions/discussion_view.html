@@ -9,8 +9,12 @@
 <p class='text text-info'>{{ discussion.tagged_post.bully_social_id }}</p>
 
 <div style="text-align:left;">
-  {% for reply in discussion.replies %}
+  {% for reply in replies %}
   <span>{{ reply.user.first_name }}: {{ reply.message }}</span><br/>
   {% endfor %}
+</div>
+
+<div class='reply-form'>
+  {{ reply_form.as_table }}
 </div>
 {% endblock %}
