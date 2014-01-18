@@ -4,7 +4,7 @@
 
 {% block body %}
 <h1>Discussion</h1>
-<h3 class='discussion-title'>{{ discussion.tagged_post.content }}</h3>
+<h3 class='discussion-title'>{{ discussion.tagged_post.content|safe }}</h3>
 <p class='label label-info'><a href='{{ discussion.tagged_post.ref_url }}'>See post →</a></p>
 <p class='text text-info'>{{ discussion.tagged_post.bully_social_id }}</p>
 
