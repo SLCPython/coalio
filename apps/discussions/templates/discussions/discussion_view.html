@@ -10,11 +10,20 @@
 
 <div style="text-align:left;">
   {% for reply in replies %}
-  <span>{{ reply.user.first_name }}: {{ reply.message }}</span><br/>
+    <span>{{ reply.author }}: {{ reply.content }}</span><br/>
   {% endfor %}
 </div>
 
 <div class='reply-form'>
-  {{ reply_form.as_table }}
+  <form role='form' action='#' method='POST'>
+    {% csrf_token %}
+    {% for field in reply_form %}
+    <div class="form-group">
+      {{ field.errors }}
+      {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <button class='btn btn-success'>Reply</button>
+  </form>
 </div>
 {% endblock %}

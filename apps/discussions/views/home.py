@@ -20,9 +20,10 @@ def view_discussion(request, id):
         reply_form = ReplyForm(request.POST)
         ctx['reply_form'] = reply_form
         if reply_form.is_valid:
-            reply_form.author = request.user
-            reply_form.discussion = discussion
-            reply_form.save()
+            reply = reply_form.save(commit=False)
+            reply.author = request.user
+            reply.discussion = discussion
+            reply.save()
 
     return render(request, template_name, ctx)
 
