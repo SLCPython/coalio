@@ -82,6 +82,3 @@ this.content=text;
 this.ref_url=domain;
 }
 
-function myAlerter() {
-    alert('Why would you say that?');
-}
