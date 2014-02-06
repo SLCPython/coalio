@@ -1,6 +1,6 @@
 # coalio
 
-Application for HackDance 2014
+~~Application for~~ Winner of HackDance 2014!
 
 ## Contributing
 
